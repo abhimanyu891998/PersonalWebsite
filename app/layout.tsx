@@ -32,7 +32,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <div className="min-h-screen flex flex-col max-w-2xl mx-auto px-4 py-12">
             <Header />
             <main className="flex-grow my-8">{children}</main>
