@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Project One",
+    "description": "A minimal personal website builder to share your work.",
+    "year": "2023",
+    "url": "https://project-one.com",
+    "github": "https://github.com/yourusername/project-one",
+    "icon": "globe"
+  },
+  {
+    "title": "Project Two",
+    "description": "Off-market acquisition opportunities.",
+    "year": "2024",
+    "url": "https://project-two.com",
+    "github": "https://github.com/yourusername/project-two",
+    "icon": "database"
+  }
+] 

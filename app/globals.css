@@ -1,0 +1,347 @@
+@font-face {
+  font-family: 'Atlassian Sans';
+  src: url('/fonts/AtlassianSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Atlassian Sans';
+  src: url('/fonts/AtlassianSans-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Atlassian Sans';
+  src: url('/fonts/AtlassianSans-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Atlassian Sans';
+  src: url('/fonts/AtlassianSans-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.5rem;
+    --font-sans: "Atlassian Sans", system-ui, sans-serif;
+    --font-heading: "Atlassian Sans", system-ui, sans-serif;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  /* Base typography */
+  body {
+    @apply bg-background text-foreground text-sm font-light;
+    font-feature-settings: "liga" 1, "calt" 1;
+    letter-spacing: -0.01em;
+  }
+
+  /* Heading hierarchy - consolidated */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-normal tracking-tight;
+    letter-spacing: -0.02em;
+  }
+
+  h1 {
+    @apply text-xl;
+  }
+
+  h2 {
+    @apply text-lg text-foreground/90;
+  }
+
+  h3 {
+    @apply text-base;
+  }
+
+  /* Text sizing utilities */
+  .text-regular {
+    @apply text-sm;
+  }
+
+  .text-small {
+    @apply text-xs;
+  }
+
+  .text-micro {
+    font-size: 0.625rem;
+  }
+
+  /* Reduced section padding */
+  section {
+    @apply py-4 border-b border-border/30 last:border-0 last:pb-0;
+  }
+
+  /* Reduced spacing between elements inside sections */
+  section>div {
+    @apply space-y-3;
+  }
+
+  /* Standard margins for headings */
+  .section-heading {
+    @apply mb-4;
+  }
+
+  /* Meta text (dates, tags, etc.) */
+  .meta-text {
+    @apply text-micro text-muted-foreground mt-1;
+  }
+
+  /* Subtle animations */
+  a,
+  button {
+    @apply transition-all duration-200;
+  }
+
+  /* Card hover effects */
+  .hover-card {
+    @apply transition-all duration-200 border border-border/50 hover:border-border hover:shadow-sm;
+  }
+}
+
+/* Update prose styling for minimalist look */
+.prose {
+  @apply text-foreground/90 text-sm font-light;
+  max-width: 100%;
+}
+
+.prose a {
+  @apply text-foreground hover:text-primary no-underline hover:underline;
+}
+
+.prose p {
+  @apply mb-4 leading-relaxed;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  @apply font-normal text-foreground/90 mt-8 mb-4;
+}
+
+.prose h1 {
+  @apply text-xl;
+}
+
+.prose h2 {
+  @apply text-lg;
+}
+
+.prose h3 {
+  @apply text-base;
+}
+
+.prose code {
+  @apply px-1 py-0.5 bg-muted/70 rounded text-xs;
+}
+
+.prose pre {
+  @apply p-4 bg-muted/70 rounded-md overflow-x-auto my-6;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0;
+}
+
+.prose blockquote {
+  @apply pl-4 border-l-2 border-muted-foreground/30 italic;
+}
+
+.prose ul {
+  @apply list-disc pl-5 mb-4;
+}
+
+.prose ol {
+  @apply list-decimal pl-5 mb-4;
+}
+
+.dark .prose {
+  @apply text-foreground;
+}
+
+/* Add these custom styles at the end of globals.css */
+@layer base {
+
+  /* Refined typography */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply tracking-tight font-normal;
+    letter-spacing: -0.02em;
+  }
+
+  h1 {
+    @apply text-xl leading-tight sm:text-2xl;
+  }
+
+  h2 {
+    @apply text-lg leading-tight sm:text-xl;
+  }
+
+  h3 {
+    @apply text-base sm:text-lg;
+  }
+
+  /* Smaller text variants */
+  .text-small {
+    @apply text-sm;
+  }
+
+  .text-tiny {
+    @apply text-xs;
+  }
+
+  .text-micro {
+    font-size: 0.625rem;
+    /* 10px */
+  }
+
+  /* Page section styling */
+  section {
+    @apply py-6 border-b border-border/30 last:border-0 last:pb-0;
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 640px) {
+    section {
+      @apply pb-8;
+    }
+
+    h1 {
+      @apply text-xl;
+    }
+
+    h2 {
+      @apply text-lg;
+    }
+  }
+
+  /* Typography standardization */
+  /* Base typography */
+  body {
+    @apply text-sm font-light;
+    letter-spacing: -0.01em;
+  }
+
+  /* Heading hierarchy */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-normal tracking-tight;
+    letter-spacing: -0.02em;
+  }
+
+  /* Level 1: Page titles */
+  h1 {
+    @apply text-xl;
+  }
+
+  /* Level 2: Section headings */
+  h2 {
+    @apply text-lg text-foreground/90;
+  }
+
+  /* Level 3: Component titles */
+  h3 {
+    @apply text-base;
+  }
+
+  /* Text sizing utilities */
+  .text-regular {
+    @apply text-sm;
+  }
+
+  .text-small {
+    @apply text-xs;
+  }
+
+  .text-micro {
+    font-size: 0.625rem;
+  }
+
+  /* Standard margins for headings */
+  .section-heading {
+    @apply mb-6;
+  }
+
+  /* Meta text (dates, tags, etc.) */
+  .meta-text {
+    @apply text-micro text-muted-foreground mt-1;
+  }
+
+  /* Specifically for article titles */
+  .article-title {
+    @apply font-light text-foreground/90;
+  }
+}

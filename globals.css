@@ -1,0 +1,10 @@
+@layer base {
+  :root {
+    --font-sans: "Inter", system-ui, sans-serif;
+    --font-serif: "Playfair Display", serif;
+  }
+  
+  h1, h2, h3 {
+    font-family: var(--font-serif);
+  }
+} 
