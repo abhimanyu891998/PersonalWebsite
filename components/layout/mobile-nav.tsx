@@ -2,14 +2,12 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Home, FileText, Briefcase, Bookmark, Sun, Moon } from "lucide-react";
-import { useTheme } from "next-themes";
+import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-  const { theme, setTheme } = useTheme();
 
   // Close menu when route changes
   useEffect(() => {
@@ -28,18 +26,10 @@ export function MobileNav() {
     };
   }, [isOpen]);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const closeMenu = () => {
-    setIsOpen(false);
-  };
-
   return (
     <div className="sm:hidden">
       <button
-        onClick={toggleMenu}
+        onClick={() => setIsOpen(!isOpen)}
         className="p-2 text-muted-foreground hover:text-foreground transition-colors"
         aria-label="Toggle menu"
       >
@@ -50,7 +40,7 @@ export function MobileNav() {
         <div className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm">
           <div className="fixed top-0 right-0 p-4">
             <button
-              onClick={closeMenu}
+              onClick={() => setIsOpen(false)}
               className="p-2 text-muted-foreground hover:text-foreground transition-colors"
               aria-label="Close menu"
             >
@@ -61,28 +51,28 @@ export function MobileNav() {
           <nav className="fixed h-full w-full flex flex-col items-center justify-center gap-8 text-foreground">
             <Link
               href="/"
-              onClick={closeMenu}
+              onClick={() => setIsOpen(false)}
               className="text-xl hover:text-primary transition-colors"
             >
               Home
             </Link>
             <Link
               href="/about"
-              onClick={closeMenu}
+              onClick={() => setIsOpen(false)}
               className="text-xl hover:text-primary transition-colors"
             >
               About
             </Link>
             <Link
               href="/articles"
-              onClick={closeMenu}
+              onClick={() => setIsOpen(false)}
               className="text-xl hover:text-primary transition-colors"
             >
               Writings
             </Link>
             <Link
               href="/bookmarks"
-              onClick={closeMenu}
+              onClick={() => setIsOpen(false)}
               className="text-xl hover:text-primary transition-colors"
             >
               Bookmarks

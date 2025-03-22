@@ -5,6 +5,7 @@ import Header from "../components/layout/header";
 import Footer from "../components/layout/footer";
 import { FloatingThemeToggle } from "../components/layout/floating-theme-toggle";
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -39,6 +40,7 @@ export default function RootLayout({
             <Footer />
           </div>
           <FloatingThemeToggle />
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>

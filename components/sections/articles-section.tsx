@@ -9,7 +9,9 @@ export function ArticlesSection() {
   return (
     <section>
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-lg font-normal tracking-tight text-foreground/90">Writings </h2>
+        <Link href="/articles" className="hover:text-primary transition-colors">
+          <h2 className="text-lg font-normal tracking-tight text-foreground/90">Writings</h2>
+        </Link>
         <Link
           href="/articles"
           className="text-muted-foreground hover:text-foreground transition-colors"
