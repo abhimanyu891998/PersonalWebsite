@@ -4,7 +4,7 @@ import { Github, Linkedin, Twitter, Mail } from "lucide-react";
 export function Socials({ vertical = false }: { vertical?: boolean }) {
   const socials = [
     { icon: Twitter, href: "https://twitter.com/abhi_s_tanwar", label: "Twitter" },
-    { icon: Linkedin, href: "https://www.linkedin.com/in/abhimanyue-singh-tanwar-30a424130/", label: "LinkedIn" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/abhi-tanwar-30a424130/", label: "LinkedIn" },
     { icon: Github, href: "https://github.com/abhimanyu891998", label: "GitHub" },
     { icon: Mail, href: "mailto:singhabhimanyu186@gmail.com", label: "Email" },
   ];
